@@ -1,9 +1,11 @@
-package net.kimleo.hello;
+package net.kimleo.hello.message;
 
+import net.kimleo.hello.strategy.MessageStrategy;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 public class MessageBodyTest {
 
@@ -20,6 +22,6 @@ public class MessageBodyTest {
 
         messageBody.send(strategy);
 
-        verify(strategy, atLeastOnce()).sendMessage();
+        verify(strategy).sendMessage();
     }
 }
